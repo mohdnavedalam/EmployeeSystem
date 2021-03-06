@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EmployeeSystem.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,19 @@ namespace EmployeeSystem.Controllers
 {
     public class EmployeeSystemController : Controller
     {
-        public IActionResult Index()
+        private AppDbContext db = null;
+        public EmployeeSystemController(AppDbContext db)
         {
-            return View();
+            this.db = db;
+        }
+
+        public IActionResult List()
+        {
+            List<Employee> model = (from e in db.Employees
+                                    orderby e.EmployeeID
+                                    select e).ToList();
+
+            return View(model);
         }
     }
 }

@@ -31,10 +31,7 @@ namespace EmployeeSystem
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+            
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -45,7 +42,7 @@ namespace EmployeeSystem
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=EmployeeSystem}/{action=List}/{id?}");
             });
         }
     }
