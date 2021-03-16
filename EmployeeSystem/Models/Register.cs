@@ -16,7 +16,7 @@ namespace EmployeeSystem.Models
         [Required]
         [Compare("Password")]
         [Display(Name = "Confirm Password")]
-        public string ComfirmPassword { get; set; }
+        public string ConfirmPassword { get; set; }
 
         [Required]
         [Display(Name = "Email")]

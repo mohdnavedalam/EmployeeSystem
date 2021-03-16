@@ -10,7 +10,14 @@
     <h1>Employee System</h1>
     <div>@RenderBody()</div>
     <br/>
-
+    <hr />
+    @if (User.Identity.IsAuthenticated)
+            {
+                <h2>You're signed in as @User.Identity.Name</h2>
+                <form asp-controller="Security" asp-action="SignOut" method="post">
+                    <button type="submit">Sign Out</button>
+                </form>
+            }
     <script src="~/lib/jquery/dist/jquery.min.js"></script>    
     @RenderSection("Scripts", required: false)
 </body>

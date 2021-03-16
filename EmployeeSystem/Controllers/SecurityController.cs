@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeSystem.Controllers
 {
-    [Authorize(Roles = "Manager")]
+    //[Authorize(Roles = "Manager")]
     public class SecurityController : Controller
     {
         private readonly UserManager<AppIdentityUser> userManager;

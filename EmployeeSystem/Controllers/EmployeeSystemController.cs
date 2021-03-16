@@ -1,4 +1,5 @@
 ﻿using EmployeeSystem.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeSystem.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class EmployeeSystemController : Controller
     {
         private AppDbContext db = null;
